@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ga-lin.github.io/"/>
-  <updated>2019-11-21T12:02:12.909Z</updated>
+  <updated>2019-11-21T12:24:57.381Z</updated>
   <id>https://ga-lin.github.io/</id>
   
   <author>
@@ -21,20 +21,21 @@
     <link href="https://ga-lin.github.io/2019/11/20/%E6%96%9C%E6%8A%95%E5%BD%B1%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>https://ga-lin.github.io/2019/11/20/%E6%96%9C%E6%8A%95%E5%BD%B1%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
     <published>2019-11-20T00:20:07.000Z</published>
-    <updated>2019-11-21T12:02:12.909Z</updated>
+    <updated>2019-11-21T12:24:57.381Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="一个直观的例子：">一个直观的例子：</h4><p>假设：</p><p>1）投影平面为z=0<br>2）直角坐标为(0，0，1)的点<em>P</em>通过斜投影得到点<em>P’</em><br>3）L为*P’<em>到坐标原点的距离<br>4）α为</em>OP’*与x轴正向所形成的角<br>5）β为投射直线与投影平面所成的角<br><img src="/2019/11/20/%E6%96%9C%E6%8A%95%E5%BD%B1%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%96%9C%E6%8A%95%E5%BD%B1.png" alt="斜投影"></p><p>设三维空间中有直角坐标为(x，y，z)的任意一点<em>Q</em>（如立方体的顶点）<br>通过斜投影所得投影点的直角坐标为<em>Q’</em>（x’，y’，z’），显然z’=0，则<br><img src="/2019/11/20/%E6%96%9C%E6%8A%95%E5%BD%B1%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%B2%BFy%E8%BD%B4%E8%B4%9F%E6%96%B9%E5%90%91.png" alt="沿y轴负方向"><br>沿y轴负方向可得：<br>$$<br>\frac{x’-x}{z}=\frac{Lcosα}{1}<br>$$</p><p>同理，沿x轴负方向可得：<br>$$<br>\frac{y’-y}{z}=\frac{Lsinα}{1}<br>$$</p><p>因此有斜投影变换公式：<br>$$<br>x’=x+z(Lcosα),y’=y+z(Lsinα)<br>$$<br>可将三维空间中任意一点斜投影至平面z=0上</p>]]></content>
+    <content type="html"><![CDATA[<p><strong>一个直观的例子：</strong></p><p>假设：<br>1）投影平面为z=0<br>2）直角坐标为(0，0，1)的点P通过斜投影得到点P’<br>3）L为P’到坐标原点的距离<br>4）α为OP’与x轴正向所形成的角<br>5）β为投射直线与投影平面所成的角<br><img src="/2019/11/20/%E6%96%9C%E6%8A%95%E5%BD%B1%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%96%9C%E6%8A%95%E5%BD%B1.png" alt="斜投影"></p><p>设三维空间中有直角坐标为(x，y，z)的任意一点Q’（如立方体的顶点）通过斜投影所得投影点的直角坐标为Q’（x’，y’，z’），显然z’=0，则<br><img src="/2019/11/20/%E6%96%9C%E6%8A%95%E5%BD%B1%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%B2%BFy%E8%BD%B4%E8%B4%9F%E6%96%B9%E5%90%91.png" alt="沿y轴负方向"><br>沿y轴负方向可得：<br>$$<br>\frac{x’-x}{z}=\frac{Lcosα}{1}<br>$$</p><p>同理，沿x轴负方向可得：<br>$$<br>\frac{y’-y}{z}=\frac{Lsinα}{1}<br>$$</p><p>因此有斜投影变换公式：<br>$$<br>x’=x+z(Lcosα),y’=y+z(Lsinα)<br>$$<br>可将三维空间中任意一点斜投影至平面z=0上</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h4 id=&quot;一个直观的例子：&quot;&gt;一个直观的例子：&lt;/h4&gt;
-&lt;p&gt;假设：&lt;/p&gt;
-&lt;p&gt;1）投影平面为z=0&lt;br&gt;
-2）直角坐标为(0，0，1)的点&lt;em&gt;P&lt;/em&gt;通过斜投影得到点&lt;em&gt;P’&lt;/em&gt;&lt;br&gt;
-3）L为*P’&lt;em&gt;到坐标原点的距离&lt;br&gt;
-4）α为&lt;
+        &lt;p&gt;&lt;strong&gt;一个直观的例子：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;假设：&lt;br&gt;
+1）投影平面为z=0&lt;br&gt;
+2）直角坐标为(0，0，1)的点P通过斜投影得到点P’&lt;br&gt;
+3）L为P’到坐标原点的距离&lt;br&gt;
+4）α为OP’与x轴正向所形成的角&lt;br&gt;
+5）β为投射直线
       
     
     </summary>

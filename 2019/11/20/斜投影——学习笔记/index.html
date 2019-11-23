@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://ga-lin.github.io">
   <title>斜投影——学习笔记 | Galin · Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="当投射直线与投影面不垂直时，投影面得到的就是斜投影，下面我们用一个直观的例子来说明。 一个直观的例子： 假设： 1）投影平面为 z=0 2）直角坐标为(0，0，1)的点P通过斜投影得到点P’ 3）L为P’到坐标原点的距离 4）α为OP’与x轴正向所形成的角 5）β为投射直线与投影平面所成的角  设三维空间中有直角坐标为(x，y，z)的任意一点Q’（如立方体的顶点），通过斜投影所得投影点的直角坐标为">
+  <meta name="description" content="当投射直线与投影面不垂直时，投影面得到的就是斜投影，下面我们用一个直观的例子来说明 一个直观的例子： 假设： 1）投影平面为 z=0 2）直角坐标为(0，0，1)的点P通过斜投影得到点P’ 3）L为P’到坐标原点的距离 4）α为OP’与x轴正向所形成的角 5）β为投射直线与投影平面所成的角  设三维空间中有直角坐标为(x，y，z)的任意一点Q’（如立方体的顶点），通过斜投影所得投影点的直角坐标为Q">
 <meta name="keywords" content="计算机图形学,学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="斜投影——学习笔记">
 <meta property="og:url" content="https:&#x2F;&#x2F;ga-lin.github.io&#x2F;2019&#x2F;11&#x2F;20&#x2F;%E6%96%9C%E6%8A%95%E5%BD%B1%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&#x2F;index.html">
 <meta property="og:site_name" content="Galin · Hexo">
-<meta property="og:description" content="当投射直线与投影面不垂直时，投影面得到的就是斜投影，下面我们用一个直观的例子来说明。 一个直观的例子： 假设： 1）投影平面为 z=0 2）直角坐标为(0，0，1)的点P通过斜投影得到点P’ 3）L为P’到坐标原点的距离 4）α为OP’与x轴正向所形成的角 5）β为投射直线与投影平面所成的角  设三维空间中有直角坐标为(x，y，z)的任意一点Q’（如立方体的顶点），通过斜投影所得投影点的直角坐标为">
+<meta property="og:description" content="当投射直线与投影面不垂直时，投影面得到的就是斜投影，下面我们用一个直观的例子来说明 一个直观的例子： 假设： 1）投影平面为 z=0 2）直角坐标为(0，0，1)的点P通过斜投影得到点P’ 3）L为P’到坐标原点的距离 4）α为OP’与x轴正向所形成的角 5）β为投射直线与投影平面所成的角  设三维空间中有直角坐标为(x，y，z)的任意一点Q’（如立方体的顶点），通过斜投影所得投影点的直角坐标为Q">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https:&#x2F;&#x2F;ga-lin.github.io&#x2F;2019&#x2F;11&#x2F;20&#x2F;%E6%96%9C%E6%8A%95%E5%BD%B1%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&#x2F;%E6%96%9C%E6%8A%95%E5%BD%B1.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;ga-lin.github.io&#x2F;2019&#x2F;11&#x2F;20&#x2F;%E6%96%9C%E6%8A%95%E5%BD%B1%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&#x2F;%E6%B2%BFy%E8%BD%B4%E8%B4%9F%E6%96%B9%E5%90%91.png">
-<meta property="og:updated_time" content="2019-11-22T11:02:51.849Z">
+<meta property="og:updated_time" content="2019-11-22T15:39:38.552Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;ga-lin.github.io&#x2F;2019&#x2F;11&#x2F;20&#x2F;%E6%96%9C%E6%8A%95%E5%BD%B1%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&#x2F;%E6%96%9C%E6%8A%95%E5%BD%B1.png">
   
@@ -63,7 +63,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+				<li><a href="/archives/index.html">归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -137,7 +137,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 50%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -172,7 +172,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>当投射直线与投影面不垂直时，投影面得到的就是斜投影，下面我们用一个直观的例子来说明。<br>
+        <p>当投射直线与投影面不垂直时，投影面得到的就是斜投影，下面我们用一个直观的例子来说明<br>
 <strong>一个直观的例子：</strong></p>
 <p>假设：<br>
 1）投影平面为 z=0<br>
@@ -197,10 +197,11 @@ x’=x+z(Lcosα),y’=y+z(Lsinα)<br>
 $$<br>
 可将三维空间中任意一点斜投影至平面 z=0上</p>
 <p><strong>如何得到斜二测投影？</strong></p>
-<p>实际上，观察图 1可知，投影平面上斜投影点的位置与角β有关，而角β受到点P和L的控制</p>
+<p>实际上，观察图 1可知，投影平面上斜投影点的位置与角β有关，而角β受到点P位置和L大小的控制<br>
+我们可以调整点P位置和L大小，使得</p>
 <p>当tanβ=2时，即可得到斜二测投影（斜二测投影使垂直于投影面的线段长度缩短为原来的一半）<br>
 当tanβ=1时，得到斜等测投影（斜等测投影使垂直于投影面的线段仍保持长度）</p>
-<p>此时α角还可以不同</p>
+<p>这时的α角还可以不同</p>
 
       
 
@@ -395,7 +396,7 @@ $$<br>
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 

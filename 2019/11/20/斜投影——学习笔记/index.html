@@ -6,23 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ga-lin.github.io">
-  <title>斜投影——学习笔记 | Galin · Hexo</title>
+  <title>斜投影——学习笔记 | Galin&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="当投射直线与投影面不垂直时，投影面得到的就是斜投影，下面我们用一个直观的例子来说明 一个直观的例子： 假设： 1）投影平面为 z=0 2）直角坐标为(0，0，1)的点P通过斜投影得到点P’ 3）L为P’到坐标原点的距离 4）α为OP’与x轴正向所形成的角 5）β为投射直线与投影平面所成的角  设三维空间中有直角坐标为(x，y，z)的任意一点Q’（如立方体的顶点），通过斜投影所得投影点的直角坐标为Q">
 <meta name="keywords" content="计算机图形学,学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="斜投影——学习笔记">
 <meta property="og:url" content="https:&#x2F;&#x2F;ga-lin.github.io&#x2F;2019&#x2F;11&#x2F;20&#x2F;%E6%96%9C%E6%8A%95%E5%BD%B1%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&#x2F;index.html">
-<meta property="og:site_name" content="Galin · Hexo">
+<meta property="og:site_name" content="Galin&#39;s Blog">
 <meta property="og:description" content="当投射直线与投影面不垂直时，投影面得到的就是斜投影，下面我们用一个直观的例子来说明 一个直观的例子： 假设： 1）投影平面为 z=0 2）直角坐标为(0，0，1)的点P通过斜投影得到点P’ 3）L为P’到坐标原点的距离 4）α为OP’与x轴正向所形成的角 5）β为投射直线与投影平面所成的角  设三维空间中有直角坐标为(x，y，z)的任意一点Q’（如立方体的顶点），通过斜投影所得投影点的直角坐标为Q">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https:&#x2F;&#x2F;ga-lin.github.io&#x2F;2019&#x2F;11&#x2F;20&#x2F;%E6%96%9C%E6%8A%95%E5%BD%B1%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&#x2F;%E6%96%9C%E6%8A%95%E5%BD%B1.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;ga-lin.github.io&#x2F;2019&#x2F;11&#x2F;20&#x2F;%E6%96%9C%E6%8A%95%E5%BD%B1%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&#x2F;%E6%B2%BFy%E8%BD%B4%E8%B4%9F%E6%96%B9%E5%90%91.png">
-<meta property="og:updated_time" content="2019-11-22T15:39:38.552Z">
+<meta property="og:updated_time" content="2019-11-25T13:10:26.129Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;ga-lin.github.io&#x2F;2019&#x2F;11&#x2F;20&#x2F;%E6%96%9C%E6%8A%95%E5%BD%B1%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&#x2F;%E6%96%9C%E6%8A%95%E5%BD%B1.png">
   
-    <link rel="alternative" href="/atom.xml" title="Galin · Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Galin&#39;s Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/img/favicon.png">
@@ -65,6 +65,8 @@
 	        
 				<li><a href="/archives/index.html">归档</a></li>
 	        
+				<li><a href="/categories">分类</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -88,6 +90,8 @@
 					<a class="github" target="_blank" href="https://github.com/Ga-Lin" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
+		        
+					<a class="csdn" target="_blank" href="https://blog.csdn.net/ma_kua" title="csdn"><i class="icon-csdn"></i></a>
 		        
 			</div>
 		</nav>
@@ -119,6 +123,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -128,16 +134,20 @@
 			        
 						<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
 			        
+						<a class="csdn" target="_blank" href="https://blog.csdn.net/ma_kua" title="csdn"><i class="icon-csdn"></i></a>
+			        
 				</div>
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/archives/index.html">归档</a></li>
+					<li style="width: 33.333333333333336%"><a href="/archives/index.html">归档</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/categories">分类</a></li>
 		        
 				</ul>
 			</nav>
@@ -172,8 +182,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>当投射直线与投影面不垂直时，投影面得到的就是斜投影，下面我们用一个直观的例子来说明<br>
-<strong>一个直观的例子：</strong></p>
+        <p>当投射直线与投影面不垂直时，投影面得到的就是斜投影，下面我们用一个直观的例子来说明</p>
+<h2 id="一个直观的例子："><strong>一个直观的例子：</strong></h2>
 <p>假设：<br>
 1）投影平面为 z=0<br>
 2）直角坐标为(0，0，1)的点P通过斜投影得到点P’<br>
@@ -196,7 +206,7 @@ $$<br>
 x’=x+z(Lcosα),y’=y+z(Lsinα)<br>
 $$<br>
 可将三维空间中任意一点斜投影至平面 z=0上</p>
-<p><strong>如何得到斜二测投影？</strong></p>
+<h2 id="如何得到斜二测投影？"><strong>如何得到斜二测投影？</strong></h2>
 <p>实际上，观察图 1可知，投影平面上斜投影点的位置与角β有关，而角β受到点P位置和L大小的控制<br>
 我们可以调整点P位置和L大小，使得</p>
 <p>当tanβ=2时，即可得到斜二测投影（斜二测投影使垂直于投影面的线段长度缩短为原来的一半）<br>
@@ -267,6 +277,17 @@ $$<br>
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/计算机图形学//" class="article-tag-list-link color2">计算机图形学</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 

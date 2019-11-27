@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ga-lin.github.io/"/>
-  <updated>2019-11-25T13:10:26.129Z</updated>
+  <updated>2019-11-27T15:41:07.273Z</updated>
   <id>https://ga-lin.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://ga-lin.github.io/2019/11/20/%E6%96%9C%E6%8A%95%E5%BD%B1%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>https://ga-lin.github.io/2019/11/20/%E6%96%9C%E6%8A%95%E5%BD%B1%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
     <published>2019-11-20T00:20:07.000Z</published>
-    <updated>2019-11-25T13:10:26.129Z</updated>
+    <updated>2019-11-27T15:41:07.273Z</updated>
     
     <content type="html"><![CDATA[<p>当投射直线与投影面不垂直时，投影面得到的就是斜投影，下面我们用一个直观的例子来说明</p><h2 id="一个直观的例子："><strong>一个直观的例子：</strong></h2><p>假设：<br>1）投影平面为 z=0<br>2）直角坐标为(0，0，1)的点P通过斜投影得到点P’<br>3）L为P’到坐标原点的距离<br>4）α为OP’与x轴正向所形成的角<br>5）β为投射直线与投影平面所成的角<br><img src="/2019/11/20/%E6%96%9C%E6%8A%95%E5%BD%B1%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%96%9C%E6%8A%95%E5%BD%B1.png" alt="斜投影"></p><p>设三维空间中有直角坐标为(x，y，z)的任意一点Q’（如立方体的顶点），通过斜投影所得投影点的直角坐标为Q’（x’，y’，z’），显然 z’=0，则<br><img src="/2019/11/20/%E6%96%9C%E6%8A%95%E5%BD%B1%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%B2%BFy%E8%BD%B4%E8%B4%9F%E6%96%B9%E5%90%91.png" alt="沿y轴负方向"><br>沿y轴负方向看去（如上图），可得：<br>$$<br>\frac{x’-x}{z}=\frac{Lcosα}{1}<br>$$</p><p>同理，沿x轴负方向看去可得：<br>$$<br>\frac{y’-y}{z}=\frac{Lsinα}{1}<br>$$</p><p>因此有斜投影变换公式：<br>$$<br>x’=x+z(Lcosα),y’=y+z(Lsinα)<br>$$<br>可将三维空间中任意一点斜投影至平面 z=0上</p><h2 id="如何得到斜二测投影？"><strong>如何得到斜二测投影？</strong></h2><p>实际上，观察图 1可知，投影平面上斜投影点的位置与角β有关，而角β受到点P位置和L大小的控制<br>我们可以调整点P位置和L大小，使得</p><p>当tanβ=2时，即可得到斜二测投影（斜二测投影使垂直于投影面的线段长度缩短为原来的一半）<br>当tanβ=1时，得到斜等测投影（斜等测投影使垂直于投影面的线段仍保持长度）</p><p>这时的α角还可以不同</p>]]></content>
     

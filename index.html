@@ -157,6 +157,134 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-最优性原理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/10/%E6%9C%80%E4%BC%98%E6%80%A7%E5%8E%9F%E7%90%86/">最优性原理</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/10/%E6%9C%80%E4%BC%98%E6%80%A7%E5%8E%9F%E7%90%86/" class="archive-article-date">
+  	<time datetime="2019-12-10T02:19:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>看了很多有关最优性原理的解释，总是感觉不清晰、不透彻，以下是我个人的理解</p>
+<p>我们先给出定义：</p>
+<p><strong>最优性原理	对于多阶段决策过程的最优决策序列具有如下性质：不论初始状态和初始决策如何，对于前面决策所造成的某一状态而言，其后各阶段的决策序列必须构成最优策略</strong></p>
+<p>它看上去很讨厌，如同与你玩文字游戏，我们单看冒号前的文字，可知：<br>
+1）首先它指出，这是一个性质，是最优决策序列的性质<br>
+2）假设我们已知这个最优决策序列</p>
+<p>好了我们就此打住，不继续往下解读了，我们来看一个直观的例子：<br>
+<img src="/2019/12/10/%E6%9C%80%E4%BC%98%E6%80%A7%E5%8E%9F%E7%90%86/%E6%9C%80%E4%BC%98%E6%80%A7%E5%8E%9F%E7%90%86.png" alt="最优性原理"><br>
+假设有地点A、B、C、D、E，火车要从A开往E，求最短路线</p>
+<p>这显然是一个多阶段决策问题，火车每到达一个地点，必须选择下一个开往的地点</p>
+<p>假设我们已知这个问题的最优决策序列，显然它是A-&gt;B-&gt;C-&gt;E<br>
+请一定记住，我们接下来的讨论都是基于这个假设之上的</p>
+<p>火车到达B后，从B开往E的最短路线是什么？</p>
+<p>我们不知道，我们现在只知道：<br>
+1）从A开往E的最短路线A-&gt;B-&gt;C-&gt;E<br>
+2）B处有两个决策：开往C或开往D</p>
+<p>此时，冒号之后的文字起了作用，在这个问题里，它表达为：从B开往E的最短路线必须在A-&gt;B-&gt;C-&gt;E上，即B-&gt;C-&gt;E，故火车在B处选择开往C</p>
+<p>换一个角度理解，那么最优性原理想要表达的就是：<br>
+<strong>对于多阶段决策问题，整个问题的最优决策序列，一定包含了它子问题的最优决策序列<br>
+不严谨地说就是，多阶段决策问题的整体最优解一定能使得局部最优</strong></p>
+
+      
+
+ <!-- 添加版权声明 -->
+    
+
+  <div class="declare" hidden="hidden"></div>
+
+      <!-- 添加版权声明 -->
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+        <div class="article-pop-out tagcloud">
+          <i class="icon-tuding"></i>
+          <a class="article-tag-list-link color3">置顶</a>
+        </div>
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">动态规划</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">最优性原理</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/算法/动态规划//" class="article-tag-list-link color5">动态规划</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/10/%E6%9C%80%E4%BC%98%E6%80%A7%E5%8E%9F%E7%90%86/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-斜投影——学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -475,6 +603,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">学习笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">动态规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">最优性原理</a>
               </li>
             
             <div class="clearfix"></div>

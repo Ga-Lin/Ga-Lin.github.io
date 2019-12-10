@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ga-lin.github.io/"/>
-  <updated>2019-11-27T15:41:07.273Z</updated>
+  <updated>2019-12-10T02:33:25.405Z</updated>
   <id>https://ga-lin.github.io/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>最优性原理</title>
+    <link href="https://ga-lin.github.io/2019/12/10/%E6%9C%80%E4%BC%98%E6%80%A7%E5%8E%9F%E7%90%86/"/>
+    <id>https://ga-lin.github.io/2019/12/10/%E6%9C%80%E4%BC%98%E6%80%A7%E5%8E%9F%E7%90%86/</id>
+    <published>2019-12-10T02:19:40.000Z</published>
+    <updated>2019-12-10T02:33:25.405Z</updated>
+    
+    <content type="html"><![CDATA[<p>看了很多有关最优性原理的解释，总是感觉不清晰、不透彻，以下是我个人的理解</p><p>我们先给出定义：</p><p><strong>最优性原理对于多阶段决策过程的最优决策序列具有如下性质：不论初始状态和初始决策如何，对于前面决策所造成的某一状态而言，其后各阶段的决策序列必须构成最优策略</strong></p><p>它看上去很讨厌，如同与你玩文字游戏，我们单看冒号前的文字，可知：<br>1）首先它指出，这是一个性质，是最优决策序列的性质<br>2）假设我们已知这个最优决策序列</p><p>好了我们就此打住，不继续往下解读了，我们来看一个直观的例子：<br><img src="/2019/12/10/%E6%9C%80%E4%BC%98%E6%80%A7%E5%8E%9F%E7%90%86/%E6%9C%80%E4%BC%98%E6%80%A7%E5%8E%9F%E7%90%86.png" alt="最优性原理"><br>假设有地点A、B、C、D、E，火车要从A开往E，求最短路线</p><p>这显然是一个多阶段决策问题，火车每到达一个地点，必须选择下一个开往的地点</p><p>假设我们已知这个问题的最优决策序列，显然它是A-&gt;B-&gt;C-&gt;E<br>请一定记住，我们接下来的讨论都是基于这个假设之上的</p><p>火车到达B后，从B开往E的最短路线是什么？</p><p>我们不知道，我们现在只知道：<br>1）从A开往E的最短路线A-&gt;B-&gt;C-&gt;E<br>2）B处有两个决策：开往C或开往D</p><p>此时，冒号之后的文字起了作用，在这个问题里，它表达为：从B开往E的最短路线必须在A-&gt;B-&gt;C-&gt;E上，即B-&gt;C-&gt;E，故火车在B处选择开往C</p><p>换一个角度理解，那么最优性原理想要表达的就是：<br><strong>对于多阶段决策问题，整个问题的最优决策序列，一定包含了它子问题的最优决策序列<br>不严谨地说就是，多阶段决策问题的整体最优解一定能使得局部最优</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;看了很多有关最优性原理的解释，总是感觉不清晰、不透彻，以下是我个人的理解&lt;/p&gt;
+&lt;p&gt;我们先给出定义：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;最优性原理	对于多阶段决策过程的最优决策序列具有如下性质：不论初始状态和初始决策如何，对于前面决策所造成的某一状态而言，其后各阶段的决策序
+      
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="https://ga-lin.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="动态规划" scheme="https://ga-lin.github.io/categories/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+    
+      <category term="算法" scheme="https://ga-lin.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="动态规划" scheme="https://ga-lin.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+      <category term="最优性原理" scheme="https://ga-lin.github.io/tags/%E6%9C%80%E4%BC%98%E6%80%A7%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>斜投影——学习笔记</title>

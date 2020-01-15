@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ga-lin.site/"/>
-  <updated>2019-12-10T02:33:25.405Z</updated>
+  <updated>2020-01-15T10:58:20.883Z</updated>
   <id>https://ga-lin.site/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>交叉熵损失函数</title>
+    <link href="https://ga-lin.site/2020/01/15/%E4%BA%A4%E5%8F%89%E7%86%B5%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/"/>
+    <id>https://ga-lin.site/2020/01/15/%E4%BA%A4%E5%8F%89%E7%86%B5%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/</id>
+    <published>2020-01-15T09:53:32.000Z</published>
+    <updated>2020-01-15T10:58:20.883Z</updated>
+    
+    <content type="html"><![CDATA[<p>在理解交叉熵损失函数之前，有必要先来说一下信息熵这个概念</p><h2 id="信息熵">信息熵</h2><p>信息熵可以理解为信息杂乱程度的量化描述：信息越多，概率越均等则信息熵就越大；反之，信息越单一，概率越偏向其中某一个信息，那么熵值就越小</p><p>公式如下：</p><p>$$<br>H(X)=-\sum _ {i=1}^n P(x^{(i)}) logP(x^{(i)})<br>$$</p><p>其中，</p><p>$$<br>-logP(x^{(i)})<br>$$<br>表示一个信息的信息量，概率越小，信息量就越大，这很好理解，比如“太阳从西边出来了”，这几乎不可能发生，如果发生了，那对于我们来说其所含的信息量是巨大的</p><h2 id="交叉熵损失函数">交叉熵损失函数</h2><p>先给出公式：<br>$$<br>L(\hat y,y)=-[ylog\hat y+(1-y)log(1-\hat y)]<br>$$<br>其中ŷ为预测值</p><p>我们来解释一下这个公式：<br>当y=1时，L(ŷ,y)=-log ŷ，如果ŷ越接近于1，损失函数越接近于0<br>当y=0时，L(ŷ,y)=-(1-y)log(1-ŷ)，如果ŷ越接近于0，损失函数越接近于0</p><p>在逻辑回归中，预测值是一个概率，它表示与样本的拟合程度，而该公式既很好地表达了这种关系，也满足了损失函数的定义</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在理解交叉熵损失函数之前，有必要先来说一下信息熵这个概念&lt;/p&gt;
+&lt;h2 id=&quot;信息熵&quot;&gt;信息熵&lt;/h2&gt;
+&lt;p&gt;信息熵可以理解为信息杂乱程度的量化描述：信息越多，概率越均等则信息熵就越大；反之，信息越单一，概率越偏向其中某一个信息，那么熵值就越小&lt;/p&gt;
+&lt;p&gt;公式如下
+      
+    
+    </summary>
+    
+    
+      <category term="深度学习" scheme="https://ga-lin.site/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="深度学习" scheme="https://ga-lin.site/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="交叉熵" scheme="https://ga-lin.site/tags/%E4%BA%A4%E5%8F%89%E7%86%B5/"/>
+    
+  </entry>
   
   <entry>
     <title>最优性原理</title>
@@ -87,16 +118,16 @@
     <link href="https://ga-lin.site/2019/11/11/Welcome/"/>
     <id>https://ga-lin.site/2019/11/11/Welcome/</id>
     <published>2019-11-11T11:04:17.000Z</published>
-    <updated>2019-11-11T15:35:14.418Z</updated>
+    <updated>2020-01-15T09:51:25.205Z</updated>
     
-    <content type="html"><![CDATA[<p>非常高兴能够搭建自己的个人博客<br>感谢 <a href="https://www.codesheep.cn/" target="_blank" rel="noopener">CodeSheep</a> 大大的视频 <a href="https://www.bilibili.com/video/av44544186" target="_blank" rel="noopener">手把手教你从0开始搭建自己的个人博客 |无坑版视频教程| hexo</a></p><p>今后将在这里记录下自己的Coding旅程🙈</p><p>Welcome!<br><img src="/2019/11/11/Welcome/Welcome.png" alt="Welcome"></p>]]></content>
+    <content type="html"><![CDATA[<p>非常高兴能够搭建自己的个人博客<br>​感谢 <a href="https://www.codesheep.cn/" target="_blank" rel="noopener">CodeSheep</a> 大大的视频 <a href="https://www.bilibili.com/video/av44544186" target="_blank" rel="noopener">手把手教你从0开始搭建自己的个人博客 |无坑版视频教程| hexo</a></p><p>今后将在这里记录下自己的Coding旅程🙈</p><p>Welcome!<br><img src="/2019/11/11/Welcome/Welcome.png" alt="Welcome"></p>]]></content>
     
     <summary type="html">
     
       
       
         &lt;p&gt;非常高兴能够搭建自己的个人博客&lt;br&gt;
-感谢 &lt;a href=&quot;https://www.codesheep.cn/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CodeSheep&lt;/a&gt; 大大的视频 &lt;a href=&quot;https://www.bilibi
+​感谢 &lt;a href=&quot;https://www.codesheep.cn/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CodeSheep&lt;/a&gt; 大大的视频 &lt;a href=&quot;https://www.bilib
       
     
     </summary>

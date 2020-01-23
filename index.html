@@ -323,9 +323,10 @@ $$<br>
 L(\hat y,y)=-[ylog\hat y+(1-y)log(1-\hat y)]<br>
 $$<br>
 其中ŷ为预测值</p>
-<p>我们来解释一下这个公式：<br>
-当y=1时，L(ŷ,y)=-log ŷ，如果ŷ越接近于1，损失函数越接近于0<br>
-当y=0时，L(ŷ,y)=-(1-y)log(1-ŷ)，如果ŷ越接近于0，损失函数越接近于0</p>
+<p>我们来解释一下这个公式为什么能起作用：</p>
+<p>对于损失函数，我们希望它越小越好</p>
+<p>当y=1时，L(ŷ,y)=-log ŷ，则ŷ应尽可能接近于1，才能让损失函数尽可能地小<br>
+当y=0时，L(ŷ,y)=-(1-y)log(1-ŷ)，则ŷ应尽可能接近于0，才能让损失函数尽可能地小</p>
 <p>在逻辑回归中，预测值是一个概率，它表示与样本的拟合程度，而该公式既很好地表达了这种关系，也满足了损失函数的定义</p>
 
       
@@ -723,14 +724,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">计算机图形学</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">学习笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">算法</a>
               </li>
              
@@ -740,6 +733,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">最优性原理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">计算机图形学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">学习笔记</a>
               </li>
             
             <div class="clearfix"></div>

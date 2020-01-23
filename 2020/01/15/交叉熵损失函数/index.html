@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Galin&#39;s Blog">
 <meta property="og:description" content="在理解交叉熵损失函数之前，有必要先来说一下信息熵这个概念 信息熵 信息熵可以理解为信息杂乱程度的量化描述：信息越多，概率越均等则信息熵就越大；反之，信息越单一，概率越偏向其中某一个信息，那么熵值就越小 公式如下： $$ H(X)=-\sum _ {i=1}^n P(x^{(i)}) logP(x^{(i)}) $$ 其中， $$ -logP(x^{(i)}) $$ 表示一个信息的信息量，概率越小，">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-15T10:58:20.883Z">
+<meta property="og:updated_time" content="2020-01-23T06:03:29.364Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Galin&#39;s Blog" type="application/atom+xml">
@@ -197,9 +197,10 @@ $$<br>
 L(\hat y,y)=-[ylog\hat y+(1-y)log(1-\hat y)]<br>
 $$<br>
 其中ŷ为预测值</p>
-<p>我们来解释一下这个公式：<br>
-当y=1时，L(ŷ,y)=-log ŷ，如果ŷ越接近于1，损失函数越接近于0<br>
-当y=0时，L(ŷ,y)=-(1-y)log(1-ŷ)，如果ŷ越接近于0，损失函数越接近于0</p>
+<p>我们来解释一下这个公式为什么能起作用：</p>
+<p>对于损失函数，我们希望它越小越好</p>
+<p>当y=1时，L(ŷ,y)=-log ŷ，则ŷ应尽可能接近于1，才能让损失函数尽可能地小<br>
+当y=0时，L(ŷ,y)=-(1-y)log(1-ŷ)，则ŷ应尽可能接近于0，才能让损失函数尽可能地小</p>
 <p>在逻辑回归中，预测值是一个概率，它表示与样本的拟合程度，而该公式既很好地表达了这种关系，也满足了损失函数的定义</p>
 
       
@@ -517,14 +518,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">计算机图形学</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">学习笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">算法</a>
               </li>
              
@@ -534,6 +527,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">最优性原理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">计算机图形学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">学习笔记</a>
               </li>
             
             <div class="clearfix"></div>

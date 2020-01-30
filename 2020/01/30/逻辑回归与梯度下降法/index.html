@@ -6,14 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ga-lin.site">
-  <title>Archives: 2020/1 | Galin&#39;s Blog</title>
+  <title>逻辑回归与梯度下降法 | Galin&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Galin&#39;s Blog">
-<meta property="og:url" content="https:&#x2F;&#x2F;ga-lin.site&#x2F;archives&#x2F;2020&#x2F;01&#x2F;index.html">
+  <meta name="description" content="逻辑回归与梯度下降法 在此之前，我们得先重温一下回归，很多时候我们只记得公式，知道逻辑回归是怎么一回事，却忘了回归是什么，怎么来的 ​	回归是一种归纳的思想，在深度学习领域，就是从样本的数据出发，确定某些变量之间的定量关系式；这个建立数学模型并估计未知参数的过程就叫做回归分析 好了，我们给出关系式： $$ ŷ=σ(w^Tx+b) $$ $$ σ(z)=\frac{1}{1+e^{-z}} $$ 这">
+<meta name="keywords" content="深度学习,梯度下降法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="逻辑回归与梯度下降法">
+<meta property="og:url" content="https:&#x2F;&#x2F;ga-lin.site&#x2F;2020&#x2F;01&#x2F;30&#x2F;%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E4%B8%8E%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95&#x2F;index.html">
 <meta property="og:site_name" content="Galin&#39;s Blog">
+<meta property="og:description" content="逻辑回归与梯度下降法 在此之前，我们得先重温一下回归，很多时候我们只记得公式，知道逻辑回归是怎么一回事，却忘了回归是什么，怎么来的 ​	回归是一种归纳的思想，在深度学习领域，就是从样本的数据出发，确定某些变量之间的定量关系式；这个建立数学模型并估计未知参数的过程就叫做回归分析 好了，我们给出关系式： $$ ŷ=σ(w^Tx+b) $$ $$ σ(z)=\frac{1}{1+e^{-z}} $$ 这">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;ga-lin.site&#x2F;2020&#x2F;01&#x2F;30&#x2F;%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E4%B8%8E%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95&#x2F;%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;ga-lin.site&#x2F;2020&#x2F;01&#x2F;30&#x2F;%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E4%B8%8E%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95&#x2F;%E6%9B%B4%E5%A5%BD%E7%9A%84%E8%AF%B4%E6%98%8E.png">
+<meta property="og:updated_time" content="2020-01-30T16:09:48.669Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;ga-lin.site&#x2F;2020&#x2F;01&#x2F;30&#x2F;%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E4%B8%8E%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95&#x2F;%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95.png">
   
     <link rel="alternative" href="/atom.xml" title="Galin&#39;s Blog" type="application/atom+xml">
   
@@ -155,36 +162,108 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-逻辑回归与梯度下降法" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/30/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E4%B8%8E%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-01-30T15:49:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-30</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/30/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E4%B8%8E%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95/">逻辑回归与梯度下降法</a>
+    <h1 class="article-title" itemprop="name">
+      逻辑回归与梯度下降法
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/01/30/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E4%B8%8E%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2020-01-30T15:49:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="逻辑回归与梯度下降法">逻辑回归与梯度下降法</h2>
+<p>在此之前，我们得先重温一下回归，很多时候我们只记得公式，知道逻辑回归是怎么一回事，却忘了回归是什么，怎么来的</p>
+<p>​	<strong>回归是一种归纳的思想，在深度学习领域，就是从样本的数据出发，确定某些变量之间的定量关系式；这个建立数学模型并估计未知参数的过程就叫做回归分析</strong></p>
+<p>好了，我们给出关系式：<br>
+$$<br>
+ŷ=σ(w^Tx+b)<br>
+$$</p>
+<p>$$<br>
+σ(z)=\frac{1}{1+e^{-z}}<br>
+$$</p>
+<p>这里我们设w和b均为一维</p>
+<p>怎样估计w和b？我们总是希望预测值ŷ尽可能地拟合样本值y，损失函数描述了这种拟合关系，在逻辑回归中，使用交叉熵损失函数：<br>
+$$<br>
+L(\hat y,y)=-[ylog\hat y+(1-y)log(1-\hat y)]<br>
+$$</p>
+<p>我们可以将前面两个关系式代入，得到一个关于w和b的式子，而对于每一个样本都可以得到一个损失函数，设有m个样本，对这些损失函数求和得到一个成本函数：<br>
+$$<br>
+J(w,b)=\frac {1}{m} \sum _ {i=1}^m L(\hat y^{(i)}, y^{(i)})<br>
+$$</p>
+<p>接下来问题变成了如何找到一组w和b，使得这个成本函数尽可能地小，可以形象地将其表示为一个“找碗底”的过程<br>
+<img src="/2020/01/30/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E4%B8%8E%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95.png" alt="梯度下降法"><br>
+这就是梯度下降法所要做的，从初始点开始，每一次迭代都使用如下公式更新w和b，使得成本函数总是沿着最接近“碗底”的方向下降<br>
+$$<br>
+w=w-α\frac {∂J(w,b)}{∂w}<br>
+$$</p>
+<p>$$<br>
+b=b-α\frac {∂J(w,b)}{∂b}<br>
+$$</p>
+<p>其中α为学习率，用以控制每一次梯度下降的步长</p>
+<p>关于初始化w和b，几乎是任意的初始化方法都有效，因为成本函数是凸函数，无论在哪里初始化，使用梯度下降法都应该能达到”碗底“或其附近，这也是为什么选择交叉熵作为损失函数的原因，它总能得到或接近一个全局最优解</p>
+<p>下面我们只关注w，忽略b，具体来看看梯度下降法为什么能够”找到碗底“<br>
+<img src="/2020/01/30/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E4%B8%8E%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95/%E6%9B%B4%E5%A5%BD%E7%9A%84%E8%AF%B4%E6%98%8E.png" alt="更好的说明"><br>
+由上图可以看到，无论怎样初始化w，梯度下降法总是使w朝着成本函数减少的方向移动的</p>
+
+      
+
+ <!-- 添加版权声明 -->
+    
+
+  <div class="declare">
+    <strong>本文作者：</strong>
+    
+      Galin
+    
+    <br>
+    <strong>本文链接：</strong>
+    <a href="https://ga-lin.site/2020/01/30/逻辑回归与梯度下降法/" title="逻辑回归与梯度下降法" target="_blank">https://ga-lin.site/2020/01/30/逻辑回归与梯度下降法/</a>
+    <br>
+    <strong>版权声明：</strong>
+    <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">署名-非商业性使用-禁止演绎 4.0 国际（CC BY-NC-ND 4.0）</a>
+    转载请保留原文链接及作者
+    
+  </div>
+
+      <!-- 添加版权声明 -->
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" target="_blank" rel="noopener" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -200,7 +279,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -213,70 +292,124 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://ga-lin.site/2020/01/30/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E4%B8%8E%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/15/%E4%BA%A4%E5%8F%89%E7%86%B5%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/" class="archive-article-date">
-  	<time datetime="2020-01-15T09:53:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-15</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/01/15/%E4%BA%A4%E5%8F%89%E7%86%B5%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">交叉熵损失函数</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/15/%E4%BA%A4%E5%8F%89%E7%86%B5%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/">交叉熵损失函数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">深度学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">交叉熵</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/深度学习//" class="article-tag-list-link color5">深度学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+
+<!-- 修改css与js文件如下即可-->
+<link rel="stylesheet" href="//billts.site/extra_css/gitment.css">
+<script src="//billts.site/js/gitment.js"></script>
+<!-- end-->
+
+<script>
+var gitment = new Gitment({
+  id: "Thu Jan 30 2020 23:49:08 GMT+0800",
+  owner: 'Ga-Lin',
+  repo: 'Ga-Lin.github.io',
+  oauth: {
+    client_id: 'f51dcc936ce72521b7db',
+    client_secret: '99a29860b4f1e6bef8512a1d8a68499c6460845b',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -299,8 +432,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

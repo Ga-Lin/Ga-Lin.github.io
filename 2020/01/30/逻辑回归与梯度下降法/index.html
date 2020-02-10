@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://ga-lin.site">
   <title>逻辑回归与梯度下降法 | Galin&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="逻辑回归与梯度下降法 在此之前，我们得先重温一下回归，很多时候我们只记得公式，知道逻辑回归是怎么一回事，却忘了回归是什么，怎么来的 ​	回归是一种归纳的思想，在深度学习领域，就是从样本的数据出发，确定某些变量之间的定量关系式；这个建立数学模型并估计未知参数的过程就叫做回归分析 好了，我们给出关系式： $$ ŷ=σ(w^Tx+b) $$ $$ σ(z)=\frac{1}{1+e^{-z}} $$ 这">
+  <meta name="description" content="在此之前，我们得先重温一下回归，很多时候我们只记得公式，知道逻辑回归是怎么一回事，却忘了回归是什么，怎么来的 ​	回归是一种归纳的思想，在深度学习领域，就是从样本的数据出发，确定某些变量之间的定量关系式；这个建立数学模型并估计未知参数的过程就叫做回归分析 好了，我们给出关系式： $$ ŷ=σ(w^Tx+b) $$ $$ σ(z)=\frac{1}{1+e^{-z}} $$ 这里我们设w和b均为一维">
 <meta name="keywords" content="深度学习,梯度下降法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="逻辑回归与梯度下降法">
 <meta property="og:url" content="https:&#x2F;&#x2F;ga-lin.site&#x2F;2020&#x2F;01&#x2F;30&#x2F;%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E4%B8%8E%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95&#x2F;index.html">
 <meta property="og:site_name" content="Galin&#39;s Blog">
-<meta property="og:description" content="逻辑回归与梯度下降法 在此之前，我们得先重温一下回归，很多时候我们只记得公式，知道逻辑回归是怎么一回事，却忘了回归是什么，怎么来的 ​	回归是一种归纳的思想，在深度学习领域，就是从样本的数据出发，确定某些变量之间的定量关系式；这个建立数学模型并估计未知参数的过程就叫做回归分析 好了，我们给出关系式： $$ ŷ=σ(w^Tx+b) $$ $$ σ(z)=\frac{1}{1+e^{-z}} $$ 这">
+<meta property="og:description" content="在此之前，我们得先重温一下回归，很多时候我们只记得公式，知道逻辑回归是怎么一回事，却忘了回归是什么，怎么来的 ​	回归是一种归纳的思想，在深度学习领域，就是从样本的数据出发，确定某些变量之间的定量关系式；这个建立数学模型并估计未知参数的过程就叫做回归分析 好了，我们给出关系式： $$ ŷ=σ(w^Tx+b) $$ $$ σ(z)=\frac{1}{1+e^{-z}} $$ 这里我们设w和b均为一维">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https:&#x2F;&#x2F;ga-lin.site&#x2F;2020&#x2F;01&#x2F;30&#x2F;%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E4%B8%8E%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95&#x2F;%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;ga-lin.site&#x2F;2020&#x2F;01&#x2F;30&#x2F;%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E4%B8%8E%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95&#x2F;%E6%9B%B4%E5%A5%BD%E7%9A%84%E8%AF%B4%E6%98%8E.png">
-<meta property="og:updated_time" content="2020-01-30T16:26:24.952Z">
+<meta property="og:updated_time" content="2020-02-10T02:21:08.846Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;ga-lin.site&#x2F;2020&#x2F;01&#x2F;30&#x2F;%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E4%B8%8E%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95&#x2F;%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95.png">
   
@@ -79,8 +79,6 @@
     			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)" target="_blank" rel="noopener">友链</a>
     			
             
-    			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)" target="_blank" rel="noopener">关于我</a>
     			
             
 		</nav>
@@ -182,8 +180,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="逻辑回归与梯度下降法">逻辑回归与梯度下降法</h2>
-<p>在此之前，我们得先重温一下回归，很多时候我们只记得公式，知道逻辑回归是怎么一回事，却忘了回归是什么，怎么来的</p>
+        <p>在此之前，我们得先重温一下回归，很多时候我们只记得公式，知道逻辑回归是怎么一回事，却忘了回归是什么，怎么来的</p>
 <p>​	<strong>回归是一种归纳的思想，在深度学习领域，就是从样本的数据出发，确定某些变量之间的定量关系式；这个建立数学模型并估计未知参数的过程就叫做回归分析</strong></p>
 <p>好了，我们给出关系式：<br>
 $$<br>
@@ -203,7 +200,7 @@ J(w,b)=\frac {1}{m} \sum _ {i=1}^m L(\hat y^{(i)}, y^{(i)})<br>
 $$</p>
 <p>接下来问题变成了如何找到一组w和b，使得这个成本函数尽可能地小，可以形象地将其表示为一个“找碗底”的过程<br>
 <img src="/2020/01/30/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E4%B8%8E%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95.png" alt="梯度下降法"><br>
-这就是梯度下降法所要做的，从初始点开始，每一次迭代都使用如下公式更新w和b，使得成本函数总是沿着最接近“碗底”的方向下降<br>
+这就是梯度下降法所要做的，从初始点开始，每一次迭代都使用如下公式更新w和b，使得成本函数总是沿着最接近“碗底”的方向下降：<br>
 $$<br>
 w=w-α\frac {∂J(w,b)}{∂w}<br>
 $$</p>
@@ -485,8 +482,6 @@ MathJax.Hub.Queue(function() {
       
     
       
-      
-      
     
     
 
@@ -494,15 +489,13 @@ MathJax.Hub.Queue(function() {
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" target="_blank" rel="noopener" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" target="_blank" rel="noopener" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" target="_blank" rel="noopener" q-class="active:friends">友链</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" target="_blank" rel="noopener" q-class="active:friends">友链</a></li>
       
         
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" target="_blank" rel="noopener" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -616,12 +609,6 @@ MathJax.Hub.Queue(function() {
     
 
     
-    	<section class="tools-section tools-section-me" q-show="aboutme">
-  	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">人无近虑必有远忧</div>
-  	  	
-    	</section>
-    
   </div>
   
 </div>
@@ -692,5 +679,5 @@ MathJax.Hub.Queue(function() {
 
 </div>
   </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>

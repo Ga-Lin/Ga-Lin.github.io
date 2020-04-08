@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://ga-lin.site">
   <title>逻辑回归与梯度下降法 | Galin&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在此之前，我们得先重温一下回归，很多时候我们只记得公式，知道逻辑回归是怎么一回事，却忘了回归是什么，怎么来的 ​	回归是一种归纳的思想，在深度学习领域，就是从样本的数据出发，确定某些变量之间的定量关系式；这个建立数学模型并估计未知参数的过程就叫做回归分析 好了，我们给出关系式： $$ ŷ=σ(w^Tx+b) $$ $$ σ(z)=\frac{1}{1+e^{-z}} $$ 这里我们设w和b均为一维">
+  <meta name="description" content="在此之前，我们得先重温一下回归，很多时候我们只记得公式，知道逻辑回归是怎么一回事，却忘了回归是什么，怎么来的 我们都知道逻辑回归是分类，而不是回归，那么为何会有一个回归的名称呢，个人认为其原因主要是逻辑回归本质上还是在利用回归的思想： ​	回归是一种归纳的思想，在深度学习领域，就是从样本的数据出发，确定某些变量之间的定量关系式；这个建立数学模型并估计未知参数的过程就叫做回归分析 逻辑回归只不过是在">
 <meta name="keywords" content="深度学习,梯度下降法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="逻辑回归与梯度下降法">
 <meta property="og:url" content="https:&#x2F;&#x2F;ga-lin.site&#x2F;2020&#x2F;01&#x2F;30&#x2F;%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E4%B8%8E%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95&#x2F;index.html">
 <meta property="og:site_name" content="Galin&#39;s Blog">
-<meta property="og:description" content="在此之前，我们得先重温一下回归，很多时候我们只记得公式，知道逻辑回归是怎么一回事，却忘了回归是什么，怎么来的 ​	回归是一种归纳的思想，在深度学习领域，就是从样本的数据出发，确定某些变量之间的定量关系式；这个建立数学模型并估计未知参数的过程就叫做回归分析 好了，我们给出关系式： $$ ŷ=σ(w^Tx+b) $$ $$ σ(z)=\frac{1}{1+e^{-z}} $$ 这里我们设w和b均为一维">
+<meta property="og:description" content="在此之前，我们得先重温一下回归，很多时候我们只记得公式，知道逻辑回归是怎么一回事，却忘了回归是什么，怎么来的 我们都知道逻辑回归是分类，而不是回归，那么为何会有一个回归的名称呢，个人认为其原因主要是逻辑回归本质上还是在利用回归的思想： ​	回归是一种归纳的思想，在深度学习领域，就是从样本的数据出发，确定某些变量之间的定量关系式；这个建立数学模型并估计未知参数的过程就叫做回归分析 逻辑回归只不过是在">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https:&#x2F;&#x2F;ga-lin.site&#x2F;2020&#x2F;01&#x2F;30&#x2F;%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E4%B8%8E%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95&#x2F;%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;ga-lin.site&#x2F;2020&#x2F;01&#x2F;30&#x2F;%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E4%B8%8E%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95&#x2F;%E6%9B%B4%E5%A5%BD%E7%9A%84%E8%AF%B4%E6%98%8E.png">
-<meta property="og:updated_time" content="2020-02-10T02:21:08.846Z">
+<meta property="og:updated_time" content="2020-04-08T17:18:53.050Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;ga-lin.site&#x2F;2020&#x2F;01&#x2F;30&#x2F;%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E4%B8%8E%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95&#x2F;%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95.png">
   
@@ -181,7 +181,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>在此之前，我们得先重温一下回归，很多时候我们只记得公式，知道逻辑回归是怎么一回事，却忘了回归是什么，怎么来的</p>
+<p>我们都知道逻辑回归是分类，而不是回归，那么为何会有一个回归的名称呢，个人认为其原因主要是逻辑回归本质上还是在利用回归的思想：</p>
 <p>​	<strong>回归是一种归纳的思想，在深度学习领域，就是从样本的数据出发，确定某些变量之间的定量关系式；这个建立数学模型并估计未知参数的过程就叫做回归分析</strong></p>
+<p>逻辑回归只不过是在输出上做处理，用以解决分类问题</p>
 <p>好了，我们给出关系式：<br>
 $$<br>
 ŷ=σ(w^Tx+b)<br>
@@ -541,14 +543,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">计算机图形学</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">学习笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">算法</a>
               </li>
              
@@ -558,6 +552,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">最优性原理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">计算机图形学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">学习笔记</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -6,14 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ga-lin.site">
-  <title>Archives: 2020 | Galin&#39;s Blog</title>
+  <title>BP-网络与反向传播算法 | Galin&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Galin&#39;s Blog">
-<meta property="og:url" content="https:&#x2F;&#x2F;ga-lin.site&#x2F;archives&#x2F;2020&#x2F;index.html">
+  <meta name="description" content="BP-网络可谓是机器学习领域的劝退哥，让人觉得难以亲近，其实理解之后会发现它和线性回归、逻辑回归一样，只是做了很简单的事情 那么，如何表示BP-网络才能让人更好地理解呢？ 1）概念表示得是否易于理解，概念是给人看的，越容易理解越好 2）必须解释正向和反向传播在干嘛？为什么要进行反向传播？ 3）应从最简单的神经网络开始，参数少，好记，不会眼花缭乱 4）公式、参数的表示和含义都要清楚，尤其是上标、下标">
+<meta name="keywords" content="深度学习,BP-网络,反向传播算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BP-网络与反向传播算法">
+<meta property="og:url" content="https:&#x2F;&#x2F;ga-lin.site&#x2F;2020&#x2F;04&#x2F;07&#x2F;BP-%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95&#x2F;index.html">
 <meta property="og:site_name" content="Galin&#39;s Blog">
+<meta property="og:description" content="BP-网络可谓是机器学习领域的劝退哥，让人觉得难以亲近，其实理解之后会发现它和线性回归、逻辑回归一样，只是做了很简单的事情 那么，如何表示BP-网络才能让人更好地理解呢？ 1）概念表示得是否易于理解，概念是给人看的，越容易理解越好 2）必须解释正向和反向传播在干嘛？为什么要进行反向传播？ 3）应从最简单的神经网络开始，参数少，好记，不会眼花缭乱 4）公式、参数的表示和含义都要清楚，尤其是上标、下标">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;ga-lin.site&#x2F;2020&#x2F;04&#x2F;07&#x2F;BP-%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95&#x2F;BP-%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95%5C%E7%A5%9E%E7%BB%8F%E5%85%83.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;ga-lin.site&#x2F;2020&#x2F;04&#x2F;07&#x2F;BP-%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95&#x2F;BP-%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95%5C%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-1.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;ga-lin.site&#x2F;2020&#x2F;04&#x2F;07&#x2F;BP-%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95&#x2F;BP-%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95%5C%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-2.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;ga-lin.site&#x2F;2020&#x2F;04&#x2F;07&#x2F;BP-%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95&#x2F;BP-%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95%5C%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-3.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;ga-lin.site&#x2F;2020&#x2F;04&#x2F;07&#x2F;BP-%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95&#x2F;BP-%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95%5C%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-3.png">
+<meta property="og:updated_time" content="2020-04-08T15:55:12.518Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;ga-lin.site&#x2F;2020&#x2F;04&#x2F;07&#x2F;BP-%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95&#x2F;BP-%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95%5C%E7%A5%9E%E7%BB%8F%E5%85%83.png">
   
     <link rel="alternative" href="/atom.xml" title="Galin&#39;s Blog" type="application/atom+xml">
   
@@ -153,36 +163,280 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-BP-网络与反向传播算法" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/07/BP-%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-04-07T06:53:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-07</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/07/BP-%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95/">BP-网络与反向传播算法</a>
+    <h1 class="article-title" itemprop="name">
+      BP-网络与反向传播算法
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/04/07/BP-%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2020-04-07T06:53:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>BP-网络可谓是机器学习领域的劝退哥，让人觉得难以亲近，其实理解之后会发现它和线性回归、逻辑回归一样，只是做了很简单的事情</p>
+<p>那么，如何表示BP-网络才能让人更好地理解呢？</p>
+<p>1）概念表示得是否易于理解，概念是给人看的，越容易理解越好<br>
+<strong>2）必须解释正向和反向传播在干嘛？为什么要进行反向传播？</strong><br>
+3）应从最简单的神经网络开始，参数少，好记，不会眼花缭乱<br>
+4）公式、参数的表示和含义都要清楚，尤其是上标、下标</p>
+<p>结合上面这几点，以解决二元分类问题为例，我们来看看BP-网络究竟做了什么</p>
+<p><strong>假设样本只有一个特征，一个标签，用(x,y)来表示一个样本</strong></p>
+<h2 id="神经元">神经元</h2>
+<p>神经元由两个部分组成，一个是<strong>线性模型</strong>，另一个是<strong>激活函数</strong>，一般根据实际应用选择不同的激活函数</p>
+<p><img src="/2020/04/07/BP-%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95/BP-%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95%5C%E7%A5%9E%E7%BB%8F%E5%85%83.png" alt="神经元"></p>
+<p>这是一个最简单的神经元：<br>
+1）有一个输入<strong>x</strong>，表示样本的一个特征（通常还有一个偏置项，我们将其忽略，因为它不影响理解）<br>
+2）设<strong>z</strong>为线性模型的输出，<strong>θ</strong>为参数<br>
+3）以sigmoid函数作为激活函数可以得到神经元的输出<strong>h(z)</strong></p>
+<p>没错，实际上一个神经元所做的事情和最简单的逻辑回归模型没有任何区别，但是当样本特征的数量逐渐增加时，在逻辑回归中我们常常采用将特征组合的方式构成一个多项式模型，而这将导致大量的参数需要处理，效率极低，这也是为何我们要使用神经网络的原因，就好比现在要用性能更好的多核处理器代替单核处理器了	<a href="https://www.bilibili.com/video/BV164411S78V?p=43" target="_blank" rel="noopener">为什么要使用神经网络？</a></p>
+<h2 id="神经网络">神经网络</h2>
+<p>神经网络有三个层级，<strong>输入层</strong>、<strong>隐藏层</strong>和<strong>输出层</strong><br>
+1）输入层的神经元读入样本特征且不做任何处理，神经元的个数取决于样本特征的数目<br>
+2）输出层表示分类的结果，对于多元分类（类别≥3），神经元的个数取决于类别的数目<br>
+3）输入层和输出层有且只有一层，而隐藏层可以有多层，每一层对上一层传递来的数据进行处理；隐藏层＞1时，确保每个隐藏层的神经元个数相同；神经元的个数一般来说在不超过计算能力的情况下越多越好</p>
+<p><img src="/2020/04/07/BP-%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95/BP-%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95%5C%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-1.png" alt></p>
+<p>这是一个三层的神经网络：<br>
+$$<br>
+θ^{(k)}_{ij}表示第k层第i个神经元映射到第k+1层第j个神经元的参数<br>
+$$</p>
+<h2 id="正向和反向传播">正向和反向传播</h2>
+<p>万事具备，那么，正向和反向传播究竟做了什么？</p>
+<p>​	<strong>如果要类比线性回归，那么正向传播就是在计算预测值ŷ，反向传播就是用预测值ŷ减去样本值y得到损失函数，再对损失函数求导得到梯度，使用梯度下降法更新参数</strong></p>
+<p><img src="/2020/04/07/BP-%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95/BP-%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95%5C%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-2.png" alt><br>
+$$<br>
+a^{(i)}_j表示第i层第j个神经元的输出<br>
+$$</p>
+<p>$$<br>
+z^{(i)}_j表示第i层第j个神经元的输入<br>
+$$</p>
+<h4 id="正向传播：">正向传播：</h4>
+<p>第一层：<br>
+$$<br>
+a<sup>{(1)}_1=z</sup>{(1)}<em>1=x<br>
+$$<br>
+第二层：<br>
+$$<br>
+z<sup>{(2)}_1=θ</sup>{(1)}</em>{11}a<sup>{(1)}_1=θ</sup>{(1)}_{11}x<br>
+$$</p>
+<p>$$<br>
+a<sup>{(2)}_1=h(z</sup>{(2)}_1)=\frac {1}{1+e<sup>{-z</sup>{(2)}_1}}<br>
+$$</p>
+<p>$$<br>
+z<sup>{(2)}_2=θ</sup>{(1)}<em>{12}a<sup>{(1)}_1=θ</sup>{(1)}</em>{21}x<br>
+$$</p>
+<p>$$<br>
+a<sup>{(2)}_2=h(z</sup>{(2)}<em>2)=\frac {1}{1+e<sup>{-z</sup>{(2)}<em>2}}<br>
+$$<br>
+第三层：<br>
+$$<br>
+z<sup>{(3)}_1=θ</sup>{(2)}</em>{11}a<sup>{(2)}_1+θ</sup>{(2)}</em>{21}a^{(2)}_2<br>
+$$</p>
+<p>$$<br>
+a<sup>{(3)}_1=h(z</sup>{(3)}_1)=\frac {1}{1+e<sup>{-z</sup>{(3)}_1}}<br>
+$$</p>
+<h4 id="反向传播：">反向传播：</h4>
+<p><img src="/2020/04/07/BP-%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95/BP-%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95%5C%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-3.png" alt><br>
+$$<br>
+δ^{(i)}_j表示第i层第j个神经元的误差<br>
+$$</p>
+<p>由<a href="/2020/01/15/%E4%BA%A4%E5%8F%89%E7%86%B5%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/" title="交叉熵损失函数">交叉熵损失函数</a>：<br>
+$$<br>
+L(a<sup>{(3)}_1,y)=-[yloga</sup>{(3)}_1+(1-y)log(1-a^{(3)}_1)]<br>
+$$</p>
+<p>使用梯度下降法更新隐藏层与输出层间的参数，其中α为学习率<br>
+$$<br>
+θ<sup>{(2)}_{11}=θ</sup>{(2)}<em>{11}-α\frac {∂L(a<sup>{(3)}_1,y)}{∂θ</sup>{(2)}</em>{11}}<br>
+$$</p>
+<p>$$<br>
+θ<sup>{(2)}_{21}=θ</sup>{(2)}<em>{21}-α\frac {∂L(a<sup>{(3)}_1,y)}{∂θ</sup>{(2)}</em>{21}}<br>
+$$</p>
+<p>我们只详细讨论第一个参数，由<br>
+$$<br>
+L(a<sup>{(3)}_1,y)=-[yloga</sup>{(3)}_1+(1-y)log(1-a^{(3)}_1)]<br>
+$$</p>
+<p>$$<br>
+a<sup>{(3)}_1=h(z</sup>{(3)}_1)=\frac {1}{1+e<sup>{-z</sup>{(3)}_1}}<br>
+$$</p>
+<p>$$<br>
+z<sup>{(3)}_1=θ</sup>{(2)}<em>{11}a<sup>{(2)}_1+θ</sup>{(2)}</em>{21}a^{(2)}_2<br>
+$$</p>
+<p>根据链式求导法则，可得<br>
+$$<br>
+\frac {∂L(a<sup>{(3)}_1,y)}{∂θ</sup>{(2)}_{11}}=\frac {∂L(a<sup>{(3)}_1,y)}{∂a</sup>{(3)}_1} \frac {∂a<sup>{(3)}_1}{∂z</sup>{(3)}<em>1} \frac {∂z<sup>{(3)}_1}{∂θ</sup>{(2)}</em>{11}}<br>
+$$</p>
+<p>$$<br>
+\frac {∂L(a<sup>{(3)}_1,y)}{∂a</sup>{(3)}_1}=-(\frac {y}{a^{(3)}_1}-\frac {1-y}{1-a^{(3)}_1})=-\frac {y(1-a<sup>{(3)}_1)-(1-y)a</sup>{(3)}_1}{a<sup>{(3)}_1(1-a</sup>{(3)}_1)}=\frac {a<sup>{(3)}_1-y}{a</sup>{(3)}_1(1-a^{(3)}_1)}<br>
+$$</p>
+<p>$$<br>
+\frac {∂a<sup>{(3)}_1}{∂z</sup>{(3)}_1}=a<sup>{(3)}_1(1-a</sup>{(3)}_1)<br>
+$$</p>
+<p>$$<br>
+\frac {∂z<sup>{(3)}_1}{∂θ</sup>{(2)}_{11}}=a^{(2)}_1<br>
+$$</p>
+<p>故<br>
+$$<br>
+\frac {∂L(a<sup>{(3)}_1,y)}{∂θ</sup>{(2)}_{11}}=(a<sup>{(3)}_1-y)a</sup>{(2)}_1<br>
+$$</p>
+<p>$$<br>
+θ<sup>{(2)}_{11}=θ</sup>{(2)}_{11}-α(a<sup>{(3)}_1-y)a</sup>{(2)}_1<br>
+$$</p>
+<p>同理可得<br>
+$$<br>
+θ<sup>{(2)}_{21}=θ</sup>{(2)}<em>{21}-α(a<sup>{(3)}_1-y)a</sup>{(2)}<em>2<br>
+$$<br>
+接下来更新输入层与隐藏层间的参数<br>
+$$<br>
+θ<sup>{(1)}_{11}=θ</sup>{(1)}</em>{11}-α\frac {∂L(a<sup>{(3)}_1,y)}{∂θ</sup>{(1)}</em>{11}}<br>
+$$</p>
+<p>$$<br>
+θ<sup>{(1)}_{12}=θ</sup>{(1)}<em>{12}-α\frac {∂L(a<sup>{(3)}_1,y)}{∂θ</sup>{(1)}</em>{12}}<br>
+$$</p>
+<p>由<br>
+$$<br>
+z<sup>{(3)}_1=θ</sup>{(2)}<em>{11}a<sup>{(2)}_1+θ</sup>{(2)}</em>{21}a^{(2)}_2<br>
+$$</p>
+<p>$$<br>
+a<sup>{(2)}_1=h(z</sup>{(2)}_1)=\frac {1}{1+e<sup>{-z</sup>{(2)}_1}}<br>
+$$</p>
+<p>$$<br>
+z<sup>{(2)}_1=θ</sup>{(1)}<em>{11}a<sup>{(1)}_1=θ</sup>{(1)}</em>{11}x<br>
+$$</p>
+<p>根据链式求导法则<br>
+$$<br>
+\frac {∂L(a<sup>{(3)}_1,y)}{∂θ</sup>{(1)}_{11}}=\frac {∂L(a<sup>{(3)}_1,y)}{∂a</sup>{(3)}_1} \frac {∂a<sup>{(3)}_1}{∂z</sup>{(3)}<em>1} \frac {∂z<sup>{(3)}_1}{∂a</sup>{(2)}</em>{1}} \frac {∂a<sup>{(2)}_1}{∂z</sup>{(2)}<em>1} \frac {∂z<sup>{(2)}_1}{∂θ</sup>{(1)}</em>{11}}<br>
+$$</p>
+<p>$$<br>
+\frac {∂L(a<sup>{(3)}_1,y)}{∂a</sup>{(3)}_1}=\frac {a<sup>{(3)}_1-y}{a</sup>{(3)}_1(1-a^{(3)}_1)}<br>
+$$</p>
+<p>$$<br>
+\frac {∂a<sup>{(3)}_1}{∂z</sup>{(3)}_1}=a<sup>{(3)}_1(1-a</sup>{(3)}_1)<br>
+$$</p>
+<p>$$<br>
+\frac {∂z<sup>{(3)}_1}{∂a</sup>{(2)}<em>1}=θ^{(2)}</em>{11}<br>
+$$</p>
+<p>$$<br>
+\frac {∂a<sup>{(2)}_1}{∂z</sup>{(2)}_1}=a<sup>{(2)}_1(1-a</sup>{(2)}_1)<br>
+$$</p>
+<p>$$<br>
+\frac {∂z<sup>{(2)}_1}{∂θ</sup>{(1)}_{11}}=x<br>
+$$</p>
+<p>可得<br>
+$$<br>
+\frac {∂L(a<sup>{(3)}_1,y)}{∂θ</sup>{(1)}_{11}}=(a<sup>{(3)}_1-y)a</sup>{(2)}<em>1(1-a<sup>{(2)}_1)θ</sup>{(2)}</em>{11}x<br>
+$$</p>
+<p>$$<br>
+θ<sup>{(1)}_{11}=θ</sup>{(1)}_{11}-α(a<sup>{(3)}_1-y)a</sup>{(2)}<em>1(1-a<sup>{(2)}_1)θ</sup>{(2)}</em>{11}x<br>
+$$</p>
+<p>同理<br>
+$$<br>
+\frac {∂L(a<sup>{(3)}_1,y)}{∂θ</sup>{(1)}_{12}}=(a<sup>{(3)}_1-y)a</sup>{(2)}<em>2(1-a<sup>{(2)}_2)θ</sup>{(2)}</em>{21}x<br>
+$$</p>
+<p>$$<br>
+θ<sup>{(1)}_{12}=θ</sup>{(1)}_{12}-α(a<sup>{(3)}_1-y)a</sup>{(2)}<em>2(1-a<sup>{(2)}_2)θ</sup>{(2)}</em>{21}x<br>
+$$</p>
+<p>看上去好像结束了，但这些式子看上去十分繁琐</p>
+<p>没错，我们还有<strong>误差δ</strong>没有介绍</p>
+<h2 id="误差δ">误差δ</h2>
+<p><strong>为什么要放在最后来说？这是因为我们往往把损失函数和误差当成一回事，实则不然，误差是为了方便运算而人为定义的</strong></p>
+<p><img src="/2020/04/07/BP-%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95/BP-%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95%5C%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-3.png" alt><br>
+$$<br>
+δ^{(i)}_j表示第i层第j个神经元的误差<br>
+$$<br>
+在这个例子中：<br>
+$$<br>
+δ<sup>{(3)}_1=a</sup>{(3)}_1-y<br>
+$$</p>
+<p>$$<br>
+δ<sup>{(2)}_1=(a</sup>{(3)}_1-y)a<sup>{(2)}_1(1-a</sup>{(2)}_1)θ<sup>{(2)}_{11}=δ</sup>{(3)}<em>1h’(z<sup>{(2)}_1)θ</sup>{(2)}</em>{11}<br>
+$$</p>
+<p>$$<br>
+δ<sup>{(2)}_2=(a</sup>{(3)}_1-y)a<sup>{(2)}_2(1-a</sup>{(2)}_2)θ<sup>{(2)}_{21}=δ</sup>{(3)}<em>1h’(z<sup>{(2)}_2)θ</sup>{(2)}</em>{21}<br>
+$$</p>
+<p><strong>事实上，不管神经网络有多少层，隐藏层每个神经元的误差都可以用下面这个公式计算：</strong><br>
+$$<br>
+δ^{(i)}_j=\sum _ {k=1}<sup>mδ</sup>{(i+1)}<em>kh’(z<sup>{(i)}_j)θ</sup>{(i)}</em>{jk}<br>
+$$<br>
+其中，m为下层神经元的个数</p>
+<p><strong>而输出层的误差等于正向传播的输出值与真实值之差</strong></p>
+<p>**很多人问这个公式是怎么来的，我想这可能是在使用更复杂的神经网络去推导时，在求梯度的过程中发现所有梯度都具有相同形式的项，于是将其提出来，经过证明后，定义为误差，**至少我是这么理解的</p>
+<p>最后，回到我们的例子，我们所有更新参数的式子就变成了这样：<br>
+$$<br>
+θ<sup>{(2)}_{11}=θ</sup>{(2)}_{11}-αδ<sup>{(3)}_1a</sup>{(2)}_1<br>
+$$</p>
+<p>$$<br>
+θ<sup>{(2)}_{21}=θ</sup>{(2)}_{21}-αδ<sup>{(3)}_1a</sup>{(2)}_2<br>
+$$</p>
+<p>$$<br>
+θ<sup>{(1)}_{11}=θ</sup>{(1)}_{11}-αδ^{(2)}_1x<br>
+$$</p>
+<p>$$<br>
+θ<sup>{(1)}_{12}=θ</sup>{(1)}_{12}-αδ^{(2)}_2x<br>
+$$</p>
+<p>可以看到，在定义误差之后，<strong>所有更新参数的式子也具有了相同的形式：</strong><br>
+$$<br>
+θ<sup>{(k)}_{ij}=θ</sup>{(k)}_{ij}-αδ<sup>{(k+1)}_ja</sup>{k}_i<br>
+$$<br>
+在神经网络中，很多时候用<strong>权重w</strong>代替参数<strong>θ</strong>来表示</p>
+<p>-end-</p>
+
+      
+
+ <!-- 添加版权声明 -->
+    
+
+  <div class="declare">
+    <strong>本文作者：</strong>
+    
+      Galin
+    
+    <br>
+    <strong>本文链接：</strong>
+    <a href="https://ga-lin.site/2020/04/07/BP-网络与反向传播算法/" title="BP-网络与反向传播算法" target="_blank">https://ga-lin.site/2020/04/07/BP-网络与反向传播算法/</a>
+    <br>
+    <strong>版权声明：</strong>
+    <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">署名-非商业性使用-禁止演绎 4.0 国际（CC BY-NC-ND 4.0）</a>
+    转载请保留原文链接及作者
+    
+  </div>
+
+      <!-- 添加版权声明 -->
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" target="_blank" rel="noopener" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -202,7 +456,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -215,123 +469,124 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://ga-lin.site/2020/04/07/BP-%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/30/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E4%B8%8E%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-01-30T15:49:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-30</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/01/30/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E4%B8%8E%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">逻辑回归与梯度下降法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/30/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E4%B8%8E%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95/">逻辑回归与梯度下降法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">深度学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">梯度下降法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/深度学习//" class="article-tag-list-link color5">深度学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/15/%E4%BA%A4%E5%8F%89%E7%86%B5%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/" class="archive-article-date">
-  	<time datetime="2020-01-15T09:53:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/15/%E4%BA%A4%E5%8F%89%E7%86%B5%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/">交叉熵损失函数</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">深度学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">交叉熵</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/深度学习//" class="article-tag-list-link color5">深度学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+
+<!-- 修改css与js文件如下即可-->
+<link rel="stylesheet" href="//billts.site/extra_css/gitment.css">
+<script src="//billts.site/js/gitment.js"></script>
+<!-- end-->
+
+<script>
+var gitment = new Gitment({
+  id: "Tue Apr 07 2020 14:53:43 GMT+0800",
+  owner: 'Ga-Lin',
+  repo: 'Ga-Lin.github.io',
+  oauth: {
+    client_id: 'f51dcc936ce72521b7db',
+    client_secret: '99a29860b4f1e6bef8512a1d8a68499c6460845b',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -354,8 +609,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

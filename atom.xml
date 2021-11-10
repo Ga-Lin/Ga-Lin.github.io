@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ga-lin.site/"/>
-  <updated>2021-11-07T14:16:47.200Z</updated>
+  <updated>2021-11-10T15:32:40.176Z</updated>
   <id>https://ga-lin.site/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://ga-lin.site/2021/11/18/Music/"/>
     <id>https://ga-lin.site/2021/11/18/Music/</id>
     <published>2021-11-18T13:11:21.000Z</published>
-    <updated>2021-11-07T14:16:47.200Z</updated>
+    <updated>2021-11-10T15:32:40.176Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>        <div id="aplayer-DXPVNqsQ" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>  <script>  var options = {"narrow":false,"autoplay":false,"showlrc":0,"listFolded":false,"mode":"order","mutex":true,"preload":"metadata","theme":"#e6d0b2","music":[{"title":"Cradle Waltz","author":"M2U","url":"/2021/11/18/Music/Cradle%20Waltz.mp3","pic":"/2021/11/18/Music/Cradle%20Waltz.jpg"},{"title":"Post-script","author":"The Hoshizora Project","url":"/2021/11/18/Music/Post-script.mp3","pic":"/2021/11/18/Music/Post-script.jpg"},{"title":"Yoake no uta","author":"M2U Vocal: Dazbee","url":"/2021/11/18/Music/Yoake%20no%20uta.mp3","pic":"/2021/11/18/Music/Yoake%20no%20uta.jpg"},{"title":"YUBIKIRI-GENMAN","author":"Mili","url":"/2021/11/18/Music/YUBIKIRI-GENMAN.mp3","pic":"/2021/11/18/Music/YUBIKIRI-GENMAN.jpg"},{"title":"DIARY","author":"Xiaoming","url":"/2021/11/18/Music/DIARY.mp3","pic":"/2021/11/18/Music/DIARY.jpg"}]};  options.element = document.getElementById("aplayer-DXPVNqsQ");  var ap = new APlayer(options);    window.aplayers || (window.aplayers = []);  window.aplayers.push(ap);  </script>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>        <div id="aplayer-FPPCmPlh" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>  <script>  var options = {"narrow":false,"autoplay":false,"showlrc":0,"listFolded":false,"mode":"order","mutex":true,"preload":"metadata","theme":"#e6d0b2","music":[{"title":"Cradle Waltz","author":"M2U","url":"/2021/11/18/Music/Cradle%20Waltz.mp3","pic":"/2021/11/18/Music/Cradle%20Waltz.jpg"},{"title":"Post-script","author":"The Hoshizora Project","url":"/2021/11/18/Music/Post-script.mp3","pic":"/2021/11/18/Music/Post-script.jpg"},{"title":"Yoake no uta","author":"M2U Vocal: Dazbee","url":"/2021/11/18/Music/Yoake%20no%20uta.mp3","pic":"/2021/11/18/Music/Yoake%20no%20uta.jpg"},{"title":"Miracle of Daybreak","author":"WhiteCapella","url":"/2021/11/18/Music/Miracle%20of%20Daybreak.mp3","pic":"/2021/11/18/Music/Miracle%20of%20Daybreak.jpg"},{"title":"YUBIKIRI-GENMAN","author":"Mili","url":"/2021/11/18/Music/YUBIKIRI-GENMAN.mp3","pic":"/2021/11/18/Music/YUBIKIRI-GENMAN.jpg"},{"title":"DIARY","author":"Xiaoming","url":"/2021/11/18/Music/DIARY.mp3","pic":"/2021/11/18/Music/DIARY.jpg"}]};  options.element = document.getElementById("aplayer-FPPCmPlh");  var ap = new APlayer(options);    window.aplayers || (window.aplayers = []);  window.aplayers.push(ap);  </script>]]></content>
     
     <summary type="html">
     

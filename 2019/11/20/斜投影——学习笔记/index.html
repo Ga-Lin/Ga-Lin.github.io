@@ -5,22 +5,22 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://ga-lin.site">
+  <link rel="dns-prefetch" href="https://ga-lin.cn">
   <title>斜投影——学习笔记 | Galin&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="当投射直线与投影面不垂直时，投影面得到的就是斜投影，下面我们用一个直观的例子来说明 一个直观的例子： 假设： 1）投影平面为 z=0 2）直角坐标为(0，0，1)的点P通过斜投影得到点P’ 3）L为P’到坐标原点的距离 4）α为OP’与x轴正向所形成的角 5）β为投射直线与投影平面所成的角  设三维空间中有直角坐标为(x，y，z)的任意一点Q’（如立方体的顶点），通过斜投影所得投影点的直角坐标为Q">
 <meta name="keywords" content="计算机图形学,学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="斜投影——学习笔记">
-<meta property="og:url" content="https:&#x2F;&#x2F;ga-lin.site&#x2F;2019&#x2F;11&#x2F;20&#x2F;%E6%96%9C%E6%8A%95%E5%BD%B1%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;ga-lin.cn&#x2F;2019&#x2F;11&#x2F;20&#x2F;%E6%96%9C%E6%8A%95%E5%BD%B1%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&#x2F;index.html">
 <meta property="og:site_name" content="Galin&#39;s Blog">
 <meta property="og:description" content="当投射直线与投影面不垂直时，投影面得到的就是斜投影，下面我们用一个直观的例子来说明 一个直观的例子： 假设： 1）投影平面为 z=0 2）直角坐标为(0，0，1)的点P通过斜投影得到点P’ 3）L为P’到坐标原点的距离 4）α为OP’与x轴正向所形成的角 5）β为投射直线与投影平面所成的角  设三维空间中有直角坐标为(x，y，z)的任意一点Q’（如立方体的顶点），通过斜投影所得投影点的直角坐标为Q">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https:&#x2F;&#x2F;ga-lin.site&#x2F;2019&#x2F;11&#x2F;20&#x2F;%E6%96%9C%E6%8A%95%E5%BD%B1%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&#x2F;%E6%96%9C%E6%8A%95%E5%BD%B1.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;ga-lin.site&#x2F;2019&#x2F;11&#x2F;20&#x2F;%E6%96%9C%E6%8A%95%E5%BD%B1%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&#x2F;%E6%B2%BFy%E8%BD%B4%E8%B4%9F%E6%96%B9%E5%90%91.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;ga-lin.cn&#x2F;2019&#x2F;11&#x2F;20&#x2F;%E6%96%9C%E6%8A%95%E5%BD%B1%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&#x2F;%E6%96%9C%E6%8A%95%E5%BD%B1.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;ga-lin.cn&#x2F;2019&#x2F;11&#x2F;20&#x2F;%E6%96%9C%E6%8A%95%E5%BD%B1%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&#x2F;%E6%B2%BFy%E8%BD%B4%E8%B4%9F%E6%96%B9%E5%90%91.png">
 <meta property="og:updated_time" content="2020-02-10T02:23:31.765Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;ga-lin.site&#x2F;2019&#x2F;11&#x2F;20&#x2F;%E6%96%9C%E6%8A%95%E5%BD%B1%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&#x2F;%E6%96%9C%E6%8A%95%E5%BD%B1.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;ga-lin.cn&#x2F;2019&#x2F;11&#x2F;20&#x2F;%E6%96%9C%E6%8A%95%E5%BD%B1%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&#x2F;%E6%96%9C%E6%8A%95%E5%BD%B1.png">
   
     <link rel="alternative" href="/atom.xml" title="Galin&#39;s Blog" type="application/atom+xml">
   
@@ -223,7 +223,7 @@ $$<br>
     
     <br>
     <strong>本文链接：</strong>
-    <a href="https://ga-lin.site/2019/11/20/斜投影——学习笔记/" title="斜投影——学习笔记" target="_blank">https://ga-lin.site/2019/11/20/斜投影——学习笔记/</a>
+    <a href="https://ga-lin.cn/2019/11/20/斜投影——学习笔记/" title="斜投影——学习笔记" target="_blank">https://ga-lin.cn/2019/11/20/斜投影——学习笔记/</a>
     <br>
     <strong>版权声明：</strong>
     <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">署名-非商业性使用-禁止演绎 4.0 国际（CC BY-NC-ND 4.0）</a>
@@ -335,7 +335,7 @@ $$<br>
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://ga-lin.site/2019/11/20/%E6%96%9C%E6%8A%95%E5%BD%B1%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://ga-lin.cn/2019/11/20/%E6%96%9C%E6%8A%95%E5%BD%B1%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -552,6 +552,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">梯度下降法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">算法</a>
               </li>
              
@@ -561,10 +565,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">最优性原理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">梯度下降法</a>
               </li>
              
               <li class="article-tag-list-item">

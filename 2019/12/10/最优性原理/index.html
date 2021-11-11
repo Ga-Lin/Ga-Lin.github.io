@@ -5,21 +5,21 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://ga-lin.site">
+  <link rel="dns-prefetch" href="https://ga-lin.cn">
   <title>最优性原理 | Galin&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="看了很多有关最优性原理的解释，总是感觉不清晰、不透彻，以下是我个人的理解 我们先给出定义： 最优性原理	对于多阶段决策过程的最优决策序列具有如下性质：不论初始状态和初始决策如何，对于前面决策所造成的某一状态而言，其后各阶段的决策序列必须构成最优策略 它看上去很讨厌，如同与你玩文字游戏，我们单看冒号前的文字，可知： 1）首先它指出，这是一个性质，是最优决策序列的性质 2）假设我们已知这个最优决策序列">
 <meta name="keywords" content="算法,动态规划,最优性原理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="最优性原理">
-<meta property="og:url" content="https:&#x2F;&#x2F;ga-lin.site&#x2F;2019&#x2F;12&#x2F;10&#x2F;%E6%9C%80%E4%BC%98%E6%80%A7%E5%8E%9F%E7%90%86&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;ga-lin.cn&#x2F;2019&#x2F;12&#x2F;10&#x2F;%E6%9C%80%E4%BC%98%E6%80%A7%E5%8E%9F%E7%90%86&#x2F;index.html">
 <meta property="og:site_name" content="Galin&#39;s Blog">
 <meta property="og:description" content="看了很多有关最优性原理的解释，总是感觉不清晰、不透彻，以下是我个人的理解 我们先给出定义： 最优性原理	对于多阶段决策过程的最优决策序列具有如下性质：不论初始状态和初始决策如何，对于前面决策所造成的某一状态而言，其后各阶段的决策序列必须构成最优策略 它看上去很讨厌，如同与你玩文字游戏，我们单看冒号前的文字，可知： 1）首先它指出，这是一个性质，是最优决策序列的性质 2）假设我们已知这个最优决策序列">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https:&#x2F;&#x2F;ga-lin.site&#x2F;2019&#x2F;12&#x2F;10&#x2F;%E6%9C%80%E4%BC%98%E6%80%A7%E5%8E%9F%E7%90%86&#x2F;%E6%9C%80%E4%BC%98%E6%80%A7%E5%8E%9F%E7%90%86.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;ga-lin.cn&#x2F;2019&#x2F;12&#x2F;10&#x2F;%E6%9C%80%E4%BC%98%E6%80%A7%E5%8E%9F%E7%90%86&#x2F;%E6%9C%80%E4%BC%98%E6%80%A7%E5%8E%9F%E7%90%86.png">
 <meta property="og:updated_time" content="2021-11-07T04:49:04.436Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;ga-lin.site&#x2F;2019&#x2F;12&#x2F;10&#x2F;%E6%9C%80%E4%BC%98%E6%80%A7%E5%8E%9F%E7%90%86&#x2F;%E6%9C%80%E4%BC%98%E6%80%A7%E5%8E%9F%E7%90%86.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;ga-lin.cn&#x2F;2019&#x2F;12&#x2F;10&#x2F;%E6%9C%80%E4%BC%98%E6%80%A7%E5%8E%9F%E7%90%86&#x2F;%E6%9C%80%E4%BC%98%E6%80%A7%E5%8E%9F%E7%90%86.png">
   
     <link rel="alternative" href="/atom.xml" title="Galin&#39;s Blog" type="application/atom+xml">
   
@@ -212,7 +212,7 @@
     
     <br>
     <strong>本文链接：</strong>
-    <a href="https://ga-lin.site/2019/12/10/最优性原理/" title="最优性原理" target="_blank">https://ga-lin.site/2019/12/10/最优性原理/</a>
+    <a href="https://ga-lin.cn/2019/12/10/最优性原理/" title="最优性原理" target="_blank">https://ga-lin.cn/2019/12/10/最优性原理/</a>
     <br>
     <strong>版权声明：</strong>
     <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">署名-非商业性使用-禁止演绎 4.0 国际（CC BY-NC-ND 4.0）</a>
@@ -332,7 +332,7 @@
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://ga-lin.site/2019/12/10/%E6%9C%80%E4%BC%98%E6%80%A7%E5%8E%9F%E7%90%86/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://ga-lin.cn/2019/12/10/%E6%9C%80%E4%BC%98%E6%80%A7%E5%8E%9F%E7%90%86/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -536,6 +536,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">梯度下降法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">算法</a>
               </li>
              
@@ -545,10 +549,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">最优性原理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">梯度下降法</a>
               </li>
              
               <li class="article-tag-list-item">
